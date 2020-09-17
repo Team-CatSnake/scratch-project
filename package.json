@@ -6,7 +6,8 @@
   "scripts": {
     "start": "NODE_ENV=production node server/server.js",
     "build": "NODE_ENV=production webpack",
-    "dev": "concurrently \"nodemon server/server.js\" \"webpack-dev-server --open\""
+    "dev": "concurrently \"nodemon server/server.js\" \"webpack-dev-server --open\"",
+    "test": "jest --verbose"
   },
   "repository": {
     "type": "git",
@@ -19,10 +20,16 @@
     "url": "https://github.com/Wunderpuss-Photogenicus/scratch-project/issues"
   },
   "homepage": "https://github.com/Wunderpuss-Photogenicus/scratch-project#readme",
+  "jest": {
+    "globalSetup": "./jest-setup.js",
+    "globalTeardown": "./jest-teardown.js"
+  },
   "dependencies": {
+    "@babel/plugin-transform-async-to-generator": "^7.10.4",
+    "D": "^1.0.0",
     "body-parser": "^1.18.3",
     "cors": "^2.8.5",
-    "express": "^4.16.3",
+    "d": "^1.0.1",
     "node-fetch": "^2.3.0",
     "pg": "^8.3.3",
     "react": "^16.5.2",
@@ -37,17 +44,32 @@
   },
   "devDependencies": {
     "@babel/core": "^7.11.6",
+    "@babel/plugin-transform-runtime": "^7.11.5",
     "@babel/preset-env": "^7.11.5",
     "@babel/preset-react": "^7.10.4",
     "axios": "^0.20.0",
+    "babel-core": "^6.26.3",
+    "babel-jest": "^26.3.0",
     "babel-loader": "^8.1.0",
-    "concurrently": "^5.0.0",
+    "concurrently": "^5.3.0",
     "cross-env": "^6.0.3",
     "css-loader": "^4.3.0",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.4",
+    "enzyme-to-json": "^3.5.0",
+    "eslint": "^7.9.0",
+    "express": "^4.16.3",
+    "jest": "^26.4.2",
+    "jest-puppeteer": "^4.4.0",
     "nodemon": "^2.0.4",
+    "puppeteer": "^5.3.0",
+    "react-addons-test-utils": "^15.6.2",
+    "react-test-renderer": "^16.13.1",
     "style-loader": "^1.2.1",
+    "supertest": "^4.0.2",
     "webpack": "^4.44.1",
     "webpack-cli": "^3.3.12",
-    "webpack-dev-server": "^3.11.0"
+    "webpack-dev-server": "^3.11.0",
+    "zombie": "^6.1.4"
   }
 }

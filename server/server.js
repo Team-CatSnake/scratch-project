@@ -39,4 +39,5 @@ app.use((err, req, res, next) => {
 });
 
 // Begin listening on port number PORT
-app.listen(PORT, () => console.log('The server is running on CatSnake-3000'));
+
+module.exports = app.listen(PORT, () => console.log('The server is running on CatSnake-3000'));
