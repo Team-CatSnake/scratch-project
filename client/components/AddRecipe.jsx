@@ -4,11 +4,11 @@ import { connect } from 'react-redux';
 import axios from "axios";
 
 const mapStateToProps = (state) => ({
-  addName: state.recipes.modal.addName,
-  addInstructions: state.recipes.modal.instructions,
-  addIngredients: state.recipes.modal.ingredients,
-  addimagelink: state.recipes.modal.addImagelink,
-  showModal: state.recipes.modal.showModal
+  addNameDB: state.recipes.modal.addName,
+  addInstructionsDB: state.recipes.modal.addInstructions,
+  addIngredientsDB: state.recipes.modal.addIngredients,
+  addimagelinkDB: state.recipes.modal.addimagelink,
+  showModalDB: state.recipes.modal.showModal
 
 })
 
@@ -16,7 +16,7 @@ const mapDispatchToProps = (dispatch) => ({
   addName: (data) => dispatch(actions.addName(data)),
   addInstructions: (data) => dispatch(actions.addInstructions(data)),
   addIngredients: (data) => dispatch(actions.addIngredients(data)),
-  addImageLink: (data) => dispatch(actions.addImageLink(data)),
+  addimagelink: (data) => dispatch(actions.addImageLink(data)),
   showModal: () => dispatch(actions.showModal()),
   setModal: () => dispatch(actions.setModal())
 })
@@ -35,19 +35,18 @@ class AddRecipe extends Component {
   }
 
   sendNewRecipe() {
+    console.log(this.props.addInstructionsDB, this.props.addimagelinkDB)
     return axios
       .post(
         "http://localhost:3000/api/addRecipe",
         {
-          name: this.props.addName,
-          ingredients:this.props.addIngredients,
-          instructions:this.props.addInstructions,
-          imagelink:this.props.addImagelink 
+          name: this.props.addNameDB,
+          ingredients:this.props.addIngredientsDB,
+          instructions:this.props.addInstructionsDB,
+          imagelink:this.props.addimagelinkDB 
         }
       )
-      .then(() => {
-        this.props.setModal
-      })
+      .then(this.props.setModal())
       
       .catch((err) => {
         console.error(err.messsage);
@@ -81,7 +80,7 @@ class AddRecipe extends Component {
           <input
            type="text"
            placeholder={'Input image link here...'}
-           onChange={(e) => this.props.addImagelink(e.target.value)}/>
+           onChange={(e) => this.props.addimagelink(e.target.value)}/>
            
         </form>
         <br/>

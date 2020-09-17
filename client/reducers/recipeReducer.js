@@ -51,7 +51,7 @@ const recipeReducer = (state = initialState, action) => {
     case types.SET_SEARCH:
       return {
         ...state,
-        //recipesList: [],
+        recipesList: [],
         name: action.payload
       }
     case types.SHOW_MODAL:
@@ -94,16 +94,16 @@ const recipeReducer = (state = initialState, action) => {
         ...state,
         modal : {
           ...state.modal,
-          addingredients: action.payload
+          addIngredients: action.payload
         }
       }
 
     case types.ADD_IMAGELINK:
       return {
         ...state,
-        newRecipe : {
+        modal : {
           ...state.modal,
-          addImagelink: action.payload
+          addimagelink: action.payload
         }
       }
 
@@ -113,9 +113,9 @@ const recipeReducer = (state = initialState, action) => {
           modal : {
             ...state.modal,
             addName:'',
-            addingredients:'',
+            addIngredients:'',
             addInstructions:'',
-            addImagelink:''
+            addimagelink:''
           }
         }
         default: 
