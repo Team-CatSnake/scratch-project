@@ -7,8 +7,14 @@ html{
   background-image: linear-gradient(140deg, #EADEDB 0%, #9dd1f3 50%, #63addf 75%);
   background-repeat: no-repeat;
   min-height: 100%;
+  font-family: Arial, Helvetica, sans-serif
 }
 
+#input {
+  width: 300px;
+  height: 23px;
+  border-radius: 5px;
+}
 #header {
   display:flex;
   justify-content:center;
@@ -22,6 +28,8 @@ html{
   padding-top: 3%;
   margin-bottom: 10px;
   color: #0a1f3d;
+  font-size: 2.5em;
+  
 }
 .openModal{
   background-color: rgb(167, 198, 224);
@@ -31,18 +39,36 @@ html{
   border-radius: 5px;
 }
 .modalButton{
-  color: rgb(22, 67, 134);
+  color: rgb(255, 255, 255);
   position: absolute;
-  top: 103px;
+  top: 110px;
   left: 10px;
+  height: 29px;
+  border: 2px solid rgb(72, 77, 104);
+  border-radius: 5px;
+  background-color: rgb(81, 172, 224);
 }
 
 .modalSubmit {
-  color: rgb(22, 67, 134);
+  color: rgb(255, 255, 255);
+  height: 29px;
+  border: 2px solid rgb(72, 77, 104);
+  border-radius: 5px;
+  background-color: rgb(81, 172, 224);
 }
 
 .inputFields {
   line-height: 1px;
+}
+
+.recipeInputs {
+ padding: 30px;
+ width: 300px;
+ border-radius: 5px;
+}
+
+input[type=text]:focus {
+  background-color: rgb(192, 222, 231);
 }
 
 .recipeContainer {
@@ -61,7 +87,11 @@ html{
 
 .searchButton {
   margin-left: 5px;
-  color: rgb(22, 67, 134);
+  color: rgb(255, 255, 255);
+  height: 29px;
+  border: 2px solid rgb(72, 77, 104);
+  border-radius: 5px;
+  background-color: rgb(81, 172, 224);
 }
 .recipeName {
   margin-top: 10px;
@@ -70,7 +100,7 @@ html{
 .recipeImg {
   max-width: 500px;
   max-height: 500px;
-  margin-top: 20px;
+  margin-top: 10px;
   box-shadow: 3px 3px 8px #888888;
   margin-bottom: 20px;
 }

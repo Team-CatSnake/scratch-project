@@ -60,24 +60,28 @@ class AddRecipe extends Component {
         <form className='inputFields'>
           <p>Recipe Name.</p>
           <input 
+            className="recipeInputs"
             type="text"
             placeholder={'Input recipe name here...'}
             onChange={(e) => this.props.addName(e.target.value)}/>
 
           <p>Instructions: </p>
           <input 
+            className="recipeInputs"
             type="text"
             placeholder={'Input instructions here...'}
             onChange={(e) => this.props.addInstructions(e.target.value)}/>
 
           <p>Ingredients: </p>
           <input
+           className="recipeInputs"
            type="text" 
            placeholder={'Input ingredients here...'}
            onChange={(e) => this.props.addIngredients(e.target.value)}/>
 
           <p>Image Link: </p>
           <input
+           className="recipeInputs"
            type="text"
            placeholder={'Input image link here...'}
            onChange={(e) => this.props.addimagelink(e.target.value)}/>
